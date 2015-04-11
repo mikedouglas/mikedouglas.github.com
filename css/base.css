@@ -6,6 +6,10 @@ body {
     padding-top: 8px;
 }
 
+p {
+    margin: 8px 0;
+}
+
 #title {
     font-weight: bold;
 }
