@@ -1,0 +1,28 @@
+<html>
+<head>
+</head>
+<body>
+  <span id="info">Testing...</span>
+  <script>
+  function reportError() {
+    var elem = document.querySelector('#info');
+    elem.innerText = 'ERROR';
+  };
+
+  function reportSuccess() {
+    var elem = document.querySelector('#info');
+    elem.innerText = 'SUCCESS';
+  }
+
+  function testConnection() {
+    var timer = setTimeout(reportError, 5000);
+    var ws = new WebSocket('ws://marlin3-ws.getduel.com/auth/test');
+    ws.onmessage = function () {
+      clearTimeout(timer);
+      reportSuccess();
+    };
+  };
+  testConnection();
+  </script>
+</body>
+</html>
