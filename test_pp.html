@@ -1,16 +1,32 @@
 <html>
 <head>
+  <style>
+  .success {
+    color: green;
+  }
+  .error {
+    color: red;
+  }
+  #info {
+    font-size: 48px;
+    font-family: sans-serif;
+    font-weight: bold;
+  }
+  </style>
 </head>
 <body>
+  <div>Testing Pineapple connection:</div>
   <span id="info">Testing...</span>
   <script>
   function reportError() {
     var elem = document.querySelector('#info');
+    elem.classList.add('error');
     elem.innerText = 'ERROR';
   };
 
   function reportSuccess() {
     var elem = document.querySelector('#info');
+    elem.classList.add('success');
     elem.innerText = 'SUCCESS';
   }
 
